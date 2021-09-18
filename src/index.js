@@ -10,10 +10,12 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 import Router from "./Router/routes";
 import { BrowserRouter } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ToastContainer theme="colored" />
       <Router />
     </BrowserRouter>
   </React.StrictMode>,
