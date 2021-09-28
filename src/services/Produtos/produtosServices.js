@@ -5,7 +5,6 @@ export async function ObterTodosProdutos() {
 }
 
 export async function AdicionarNovoProduto(produto) {
-  console.log("aaaa");
   return await baseUrl.post("/produtos", produto);
 }
 
@@ -14,7 +13,6 @@ export async function ApagarProduto(id) {
 }
 
 export async function EditarProduto(id, produto) {
-  console.log("aaaa");
   produto.produtoId = id;
   return await baseUrl.put(`/produtos/${id}`, produto);
 }

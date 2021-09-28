@@ -63,7 +63,6 @@ const Produtos = () => {
   }
 
   const OnSubmit = async (data) => {
-  debugger
    setRequestLoading(true)
     const responseData =  produtoSelecionado !== null ?  await EditarProduto(produtoSelecionado.produtoId,data) :  await AdicionarNovoProduto(data)
     console.log(responseData)
@@ -86,10 +85,8 @@ const Produtos = () => {
           await ObterTodos()
         }
       })
-    }
-   
-
-  }
+    }   
+}
 
 
   useEffect(()=>{
