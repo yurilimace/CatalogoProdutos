@@ -13,6 +13,7 @@ export async function ExcluirCategoria(idCategoria) {
 }
 
 export async function EditarCategoria(idCategoria, categoria) {
-  categoria.CategoriaId = idCategoria;
-  return await baseUrl.put("/categorias", categoria);
+  categoria.categoriaId = idCategoria;
+
+  return await baseUrl.put(`/categorias/${idCategoria}`, categoria);
 }

@@ -14,6 +14,7 @@ const Categorias = () => {
   const [listaCategorias,setListaCategorias] = useState([]);
   const [showDialogModal,setShowDialogModal] = useState(false);
   const [requestLoading,setRequestLoding] = useState(false);
+  const [categoriaSelecionada,setCategoriaSelecionada] = useState(null)
 
   const {register,handleSubmit,reset,formState:{errors}} = useForm({
     resolver:yupResolver(CategoriaSchema)
@@ -21,10 +22,21 @@ const Categorias = () => {
 
   const ObterTodasCategorias = async () => {
     const {data} = await ObterCategorias();
-    console.log(data)
+   
     setListaCategorias(data)
   }
 
+  const HandleSelectCategoria = (categoria) =>{
+   
+    setCategoriaSelecionada(categoria)
+    setShowDialogModal(true)
+  }
+
+  const HandleCloseModal = () => {
+    setShowDialogModal(false)
+    reset()
+    setCategoriaSelecionada(null)
+  }
 
   const DeletarCategoria = async (id) => {
     const data = await ExcluirCategoria(id)
@@ -40,14 +52,15 @@ const Categorias = () => {
 
   const OnSubmit = async (data) =>{
     setRequestLoding(true)
-    const responseData = data.categoriaId === undefined ? await AdicionarCategoria(data) : 0
+    const responseData = categoriaSelecionada.categoriaId === undefined ? await AdicionarCategoria(data) : await EditarCategoria(categoriaSelecionada.categoriaId,data)
     console.log(responseData)
     if(responseData.status === 200){
-      toast.success("Sucesso ao salvar categoria",{
+      toast.success(categoriaSelecionada === null ? "Sucesso ao salvar categoria": "Sucesso ao editar categoria",{
         autoClose:2000,
         onClose:() =>{
           setRequestLoding(false)
-          setShowDialogModal(false)
+          HandleCloseModal()
+          reset()
           ObterTodasCategorias()
         }
       })
@@ -62,13 +75,13 @@ const Categorias = () => {
      <div>
       <Button label="Adicionar" icon="pi pi-plus" onClick={()=>setShowDialogModal(true)}/>
     </div>
-    <div>
+    <div className="p-mt-3">
       <DataTable value={listaCategorias}>
         <Column field="categoriaId" header="Id"></Column>
         <Column field="nome" header="Nome"></Column>
         <Column header="Ações" body={(rowData) =><div>
         <Button icon="pi pi-trash"  className="p-button-text p-button-danger p-mr-2"  onClick={()=>DeletarCategoria(rowData.categoriaId)} />
-        <Button icon="pi pi-pencil" className="p-button-text " />
+        <Button icon="pi pi-pencil" className="p-button-text " onClick={()=>HandleSelectCategoria(rowData)} />
       </div>} ></Column>
       </DataTable>
     </div>
@@ -78,19 +91,19 @@ const Categorias = () => {
         <div className="p-fluid p-formgrid p-grid" >
           <div className="p-field p-col-12 p-md-6 ">
               <label htmlFor="nome" > Nome </label>
-              <InputText name="nome" type="text" {...register("nome")} />
+              <InputText name="nome" type="text" defaultValue={categoriaSelecionada !== null ? categoriaSelecionada.nome : "" } {...register("nome")} />
               <p className="p-error"> {errors.nome?.message} </p>
           </div>
           <div className="p-field p-col-12 p-md-12">
               <label htmlFor="imagem" > Imagem URL </label>
-              <InputText name="imagem" type="text" {...register("ImagemUrl")} />
+              <InputText name="imagem" type="text" defaultValue={categoriaSelecionada !== null ? categoriaSelecionada.imagemUrl : "" } {...register("ImagemUrl")} />
               <p className="p-error"> {errors.ImagemUrl?.message} </p>
           </div>
         </div>
       </form>
       <div className="p-d-flex p-jc-end">
         <Button label="Salvar" icon="pi pi-save"  type="submit" form="categoriaForm" className="p-mr-2" loading={requestLoading} loadingoptions={{position:'right'}}  />
-        <Button label="Voltar" icon="pi pi-times" onClick={()=> setShowDialogModal(false)}  className="p-button-danger p-button-outlined" />
+        <Button label="Voltar" icon="pi pi-times" onClick={()=> HandleCloseModal()}  className="p-button-danger p-button-outlined" />
       </div>
     </Dialog>
   </div>;
