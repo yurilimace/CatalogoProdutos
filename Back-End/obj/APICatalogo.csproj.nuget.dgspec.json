@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\APICatalogo.csproj": {}
+    "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\APICatalogo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\APICatalogo.csproj": {
+    "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\APICatalogo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\APICatalogo.csproj",
+        "projectUniqueName": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\APICatalogo.csproj",
         "projectName": "APICatalogo",
-        "projectPath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\APICatalogo.csproj",
+        "projectPath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\APICatalogo.csproj",
         "packagesPath": "C:\\Users\\55859\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\obj\\",
+        "outputPath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\55859\\AppData\\Roaming\\NuGet\\NuGet.Config",

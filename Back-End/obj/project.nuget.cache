@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yRYkmL4zijIbd2Ei0CpplVdN5DruTO7errD7jNJ6jYVhN8gBrB9XDes/JSxGcAxLHvFTUEINDyUmLZK71tCgMA==",
+  "dgSpecHash": "Vo2RLCSXb5EukHUPKUqtqsW9zaNoSoQUdGGK/6xTBr1p0/DrYJxONGrShq5CdnCJl/Cf9wMvGNI+HW9cnyfaAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\APICatalogo\\APICatalogo.csproj",
+  "projectFilePath": "C:\\Users\\55859\\Documents\\Curso\\Curso web api asp.net\\Modulo-1-CatalogoProdutos\\Interface\\Back-End\\APICatalogo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\55859\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\55859\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
