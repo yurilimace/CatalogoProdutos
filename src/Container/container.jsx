@@ -27,6 +27,10 @@ const AppContainer = ({ children }) => {
     history.push(e.path);
   };
 
+  useEffect(()=>{
+    setVisible(items.findIndex(x => x.path === (history.location.pathname)))
+  },[visible])
+
   return (
     <div className="p-d-flex p-flex-column">
       <TabMenu
